@@ -7,7 +7,7 @@ app.use(bodyParser.json())
 
 const observacoesPorLembreteId = {}
 
-app.put('/lembretes/:id/observacoes',(req,res)=>{
+app.post('/lembretes/:id/observacoes',(req,res)=>{
     const idObs = uuidv4()
     const {texto} = req.body
     const observacoesDoLembrete = observacoesPorLembreteId[req.params.id] || []
